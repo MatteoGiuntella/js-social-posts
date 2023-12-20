@@ -93,3 +93,10 @@ for (let i = 0; i < posts.length; i++) {
     
 }
 let visual = document.querySelector('#container').innerHTML = postScreen 
+
+let myButton = document.querySelector('.like-button')
+
+myButton.addEventListener('click', function(){
+
+    myButton.classList.add('like-button--liked')
+})
