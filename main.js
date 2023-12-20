@@ -94,9 +94,23 @@ for (let i = 0; i < posts.length; i++) {
 }
 let visual = document.querySelector('#container').innerHTML = postScreen 
 
-let myButton = document.querySelector('.like-button')
+let myButton = document.querySelectorAll('.js-like-button')
 
-myButton.addEventListener('click', function(){
+for (let i = 0; i < myButton.length; i++) {
 
-    myButton.classList.add('like-button--liked')
-})
+    myButton[i].addEventListener('click', function(){
+
+        myButton[i].classList.add('like-button--liked')
+    })
+    
+}
+
+
+
+// let likesCounters = document.querySelectorAll('[data-postid="1"]')
+// for (var i = 0; i < elements.length; i++) {
+//   var postId = elements[i].getAttribute('data-id')
+//   // do ajax stuff
+//   // ... then
+//   elements[i].innerHTML = 'ajax response'
+// }
