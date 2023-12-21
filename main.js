@@ -94,23 +94,28 @@ for (let i = 0; i < posts.length; i++) {
 }
 let visual = document.querySelector('#container').innerHTML = postScreen 
 
-let myButton = document.querySelectorAll('.js-like-button')
+let myButton = document.querySelectorAll('.like-button')
+
+let counter = document.querySelectorAll('.js-likes-counter')
 
 for (let i = 0; i < myButton.length; i++) {
-
+     
     myButton[i].addEventListener('click', function(){
+        
+        if (!myButton[i].classList.contains('like-button--liked')) {
+            
+            posts[i].likes++
+            console.log(posts[i].likes)
+        }
+        else {
+            
+            posts[i].likes--
+            console.log(posts[i].likes)
+        }
+        myButton[i].classList.toggle('like-button--liked')
 
-        myButton[i].classList.add('like-button--liked')
+        counter[i].innerHTML = posts[i].likes
+
     })
     
 }
-
-
-
-// let likesCounters = document.querySelectorAll('[data-postid="1"]')
-// for (var i = 0; i < elements.length; i++) {
-//   var postId = elements[i].getAttribute('data-id')
-//   // do ajax stuff
-//   // ... then
-//   elements[i].innerHTML = 'ajax response'
-// }
